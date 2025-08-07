@@ -22,7 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->execute([$username]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($user && password_verify($password, $user['password'])) {
+            if ($user && $password === $user['password']) {
+
                 // Autenticación exitosa
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
@@ -51,41 +52,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title><?php echo isset($page_title) ? $page_title . ' - ' : ''; ?>Sistema de Banda Marcial</title>
     <link rel="stylesheet" href="<?php echo $base_url; ?>css/style.css">
     <script src="<?php echo $base_url; ?>js/main.js"></script>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: var(--bg-body);
-        }
-        .login-container {
-            background-color: var(--bg-card);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-        .login-container h2 {
-            margin-bottom: 25px;
-            color: var(--primary-color);
-            font-size: 1.8rem;
-        }
-        .login-container .form-group {
-            text-align: left;
-        }
-        .login-container .btn {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            margin-top: 15px;
-        }
-    </style>
 </head>
-<body>
+<body class="login-page-body">
     <div class="login-container">
+        <div class="login-logo">
+            <img src="<?php echo $base_url; ?>public/images/badaton-logo.jpeg" alt="Logo Badaton - Instrumentos que Inspiran">
+        </div>
         <h2>Iniciar Sesión</h2>
         
         <?php if ($mensaje): ?>

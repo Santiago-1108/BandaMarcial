@@ -1,73 +1,118 @@
 /* Estilos para el sistema de banda marcial - Versión compacta y optimizada */
 
 :root {
-  /* Nuevos colores suaves y modernos */
-  --color-bg-body: #f0f2f5; /* Fondo general muy claro, ligeramente gris */
-  --color-bg-card: #ffffff; /* Fondo de tarjetas y contenido principal */
-  --color-text-dark: #212529; /* Texto principal oscuro */
-  --color-text-medium: #6c757d; /* Texto secundario/mutado */
-  --color-border-light: #e0e0e0; /* Bordes muy claros */
-  --color-border-medium: #ced4da; /* Bordes estándar */
-  --color-bg-medium: #e9ecef; /* Fondo para filtros, más claro que el nav */
+  /* Nuevos colores oscuros y modernos */
+  --color-bg-body: #1e1e1e;
+  /* Fondo general muy oscuro */
+  --color-bg-card: #2a2a2a;
+  /* Fondo de tarjetas y contenido principal, ligeramente más claro que el body */
+  --color-text-dark: #e0e0e0;
+  /* Texto principal claro */
+  --color-text-medium: #b0b0b0;
+  /* Texto secundario/mutado, un gris más oscuro */
+  --color-border-light: #444444;
+  /* Bordes sutiles y oscuros */
+  --color-border-medium: #555555;
+  /* Bordes estándar, un poco más visibles */
+  --color-bg-medium: #3a3a3a;
+  /* Fondo para filtros, más claro que el nav */
 
   /* Colores de la cabecera y navegación */
-  --color-header-bg-start: #343a40; /* Gris oscuro */
-  --color-header-bg-end: #212529; /* Gris más oscuro */
-  --color-nav-bg: #495057; /* Fondo de navegación */
-  --color-nav-hover: #343a40; /* Hover de navegación */
-  --color-nav-active-line: #007bff; /* Azul primario para línea activa */
+  --color-header-bg-start: #282828;
+  /* Gris oscuro profundo */
+  --color-header-bg-end: #1a1a1a;
+  /* Gris aún más oscuro */
+  --color-nav-bg: #333333;
+  /* Fondo de navegación */
+  --color-nav-hover: #444444;
+  /* Hover de navegación */
+  --color-nav-active-line: #ffd700;
+  /* Dorado primario para línea activa */
 
   /* Colores de botones y acentos */
-  --color-primary-base: #007bff; /* Azul primario */
-  --color-primary-hover: #0056b3; /* Azul más oscuro para hover */
-  --color-success-base: #28a745; /* Verde */
-  --color-success-hover: #218838; /* Verde más oscuro */
-  --color-warning-base: #ffc107; /* Amarillo */
-  --color-warning-hover: #e0a800; /* Amarillo más oscuro */
-  --color-danger-base: #dc3545; /* Rojo */
-  --color-danger-hover: #c82333; /* Rojo más oscuro */
-  --color-secondary-base: #6c757d; /* Gris secundario */
-  --color-secondary-hover: #5a6268; /* Gris más oscuro */
+  --color-primary-base: #ffd700;
+  /* Dorado primario */
+  --color-primary-hover: #e0b800;
+  /* Dorado más oscuro para hover */
+  --color-success-base: #28a745;
+  /* Verde */
+  --color-success-hover: #218838;
+  /* Verde más oscuro */
+  --color-warning-base: #ffc107;
+  /* Amarillo */
+  --color-warning-hover: #e0a800;
+  /* Amarillo más oscuro */
+  --color-danger-base: #dc3545;
+  /* Rojo */
+  --color-danger-hover: #c82333;
+  /* Rojo más oscuro */
+  --color-secondary-base: #6c757d;
+  /* Gris secundario */
+  --color-secondary-hover: #5a6268;
+  /* Gris más oscuro */
 
-  /* Colores de alertas y estados */
-  --color-alert-success-bg: #d4edda;
-  --color-alert-success-text: #155724;
+  /* Colores de alertas y estados (ajustados para fondo oscuro) */
+  --color-alert-success-bg: rgba(40, 167, 69, 0.2);
+  /* Fondo verde semi-transparente */
+  --color-alert-success-text: #98e6a9;
+  /* Texto verde claro */
   --color-alert-success-border: #28a745;
 
-  --color-alert-error-bg: #f8d7da;
-  --color-alert-error-text: #721c24;
+  --color-alert-error-bg: rgba(220, 53, 69, 0.2);
+  /* Fondo rojo semi-transparente */
+  --color-alert-error-text: #ff8a8a;
+  /* Texto rojo claro */
   --color-alert-error-border: #dc3545;
 
-  --color-alert-warning-bg: #fff3cd;
-  --color-alert-warning-text: #856404;
+  --color-alert-warning-bg: rgba(255, 193, 7, 0.2);
+  /* Fondo amarillo semi-transparente */
+  --color-alert-warning-text: #ffe082;
+  /* Texto amarillo claro */
   --color-alert-warning-border: #ffc107;
 
-  /* Colores específicos de estados de tabla */
-  --color-status-disponible-bg: #e6ffed; /* Verde claro */
-  --color-status-disponible-text: #155724; /* Verde oscuro */
+  /* Colores específicos de estados de tabla (ajustados para fondo oscuro) */
+  --color-status-disponible-bg: rgba(40, 167, 69, 0.2);
+  /* Verde claro */
+  --color-status-disponible-text: #98e6a9;
+  /* Verde oscuro */
 
-  --color-status-prestado-bg: #fff8e6; /* Amarillo claro */
-  --color-status-prestado-text: #856404; /* Amarillo oscuro */
+  --color-status-prestado-bg: rgba(255, 193, 7, 0.2);
+  /* Amarillo claro */
+  --color-status-prestado-text: #ffe082;
+  /* Amarillo oscuro */
 
-  --color-status-danado-bg: #ffe6e6; /* Rojo claro */
-  --color-status-danado-text: #721c24; /* Rojo oscuro */
+  --color-status-danado-bg: rgba(220, 53, 69, 0.2);
+  /* Rojo claro */
+  --color-status-danado-text: #ff8a8a;
+  /* Rojo oscuro */
 
-  --color-status-en-reparacion-bg: #e6f7ff; /* Azul claro */
-  --color-status-en-reparacion-text: #0c5460; /* Azul oscuro */
+  --color-status-en-reparacion-bg: rgba(0, 123, 255, 0.2);
+  /* Azul claro */
+  --color-status-en-reparacion-text: #82b1ff;
+  /* Azul oscuro */
 
-  --color-status-activo-bg: #e6ffed; /* Verde claro */
-  --color-status-activo-text: #155724; /* Verde oscuro */
+  --color-status-activo-bg: rgba(40, 167, 69, 0.2);
+  /* Verde claro */
+  --color-status-activo-text: #98e6a9;
+  /* Verde oscuro */
 
-  --color-status-devuelto-bg: #e9ecef; /* Gris claro */
-  --color-status-devuelto-text: #343a40; /* Gris oscuro */
+  --color-status-devuelto-bg: rgba(108, 117, 125, 0.2);
+  /* Gris claro */
+  --color-status-devuelto-text: #c0c0c0;
+  /* Gris oscuro */
 
-  --color-status-vencido-bg: #ffe6e6; /* Rojo claro */
-  --color-status-vencido-text: #721c24; /* Rojo oscuro */
+  --color-status-vencido-bg: rgba(220, 53, 69, 0.2);
+  /* Rojo claro */
+  --color-status-vencido-text: #ff8a8a;
+  /* Rojo oscuro */
 
-  /* Colores para la tarjeta de información de préstamo activo */
-  --color-info-bg-light: #e6f7ff; /* Azul muy claro */
-  --color-info-border-dark: #91d5ff; /* Azul más oscuro para borde */
-  --color-info-text-dark: #0056b3; /* Azul oscuro para texto */
+  /* Colores para la tarjeta de información de préstamo activo (ajustados para fondo oscuro) */
+  --color-info-bg-light: rgba(0, 123, 255, 0.2);
+  /* Azul muy claro */
+  --color-info-border-dark: #007bff;
+  /* Azul más oscuro para borde */
+  --color-info-text-dark: #82b1ff;
+  /* Azul oscuro para texto */
 }
 
 html,
@@ -84,39 +129,236 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--color-bg-body);
   color: var(--color-text-dark);
-  line-height: 1.5; /* Aumentado para mejor legibilidad */
-  font-size: 14px; /* Tamaño de fuente base más legible */
+  line-height: 1.5;
+  /* Aumentado para mejor legibilidad */
+  font-size: 14px;
+  /* Tamaño de fuente base más legible */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Estilos específicos para la página de login */
+body.login-page-body {
+  display: flex;
+  /* Asegura el flexbox */
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
+  min-height: 100vh;
+  /* Ocupa toda la altura de la ventana */
+  width: 100vw;
+  /* Ocupa todo el ancho de la ventana */
+  background-color: #1a1a1a;
+  /* Fondo oscuro para la página de login */
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232d2d2d' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 20v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 46v-4H4v4H0v2h4v4h2v-4h4v-2H6zm0-20v-4H4v4H0v2h4v4h2v-4h4v-2H6zM36 4v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 16v-4H4v4H0v2h4v4h2v-4h4v-2H6zM46 6v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 20v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 20v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM16 2v-2h-2v2h-4v2h4v4h2v-4h4v-2h-4zm0 20v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 20v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM26 16v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 20v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM16 46v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM26 0v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  /* Patrón sutil de fondo */
+  color: #f0f0f0;
+  /* Texto claro */
+}
+
+.login-container {
+  background-color: rgba(30, 30, 30, 0.9);
+  /* Fondo oscuro semi-transparente */
+  padding: 30px;
+  /* Reducido de 40px */
+  border-radius: 12px;
+  /* Más redondeado */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  /* Sombra más pronunciada y oscura */
+  width: 100%;
+  max-width: 380px;
+  /* Reducido de 450px */
+  text-align: center;
+  border: 1px solid rgba(60, 60, 60, 0.7);
+  /* Borde sutil */
+  animation: fadeInScale 0.8s ease-out;
+  /* Animación de entrada */
+}
+
+.login-logo {
+  margin-bottom: 20px;
+  /* Reducido de 25px */
+}
+
+.login-logo img {
+  max-width: 150px;
+  /* Reducido de 180px */
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
+  /* Sombra dorada para el logo */
+}
+
+.login-container h2 {
+  margin-bottom: 25px;
+  /* Reducido de 30px */
+  color: #ffd700;
+  /* Color dorado para el título */
+  font-size: 2rem;
+  /* Reducido de 2.2rem */
+  font-weight: 700;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.login-container .form-group {
+  text-align: left;
+  margin-bottom: 18px;
+  /* Reducido de 20px */
+}
+
+.login-container .form-group label {
+  color: #e0e0e0;
+  /* Color de label claro */
+  font-weight: 500;
+  margin-bottom: 6px;
+  /* Reducido de 8px */
+  font-size: 14px;
+  /* Reducido de 15px */
+}
+
+.login-container .form-control {
+  background-color: #333;
+  /* Fondo oscuro para inputs */
+  border: 1px solid #555;
+  /* Borde oscuro */
+  color: #f0f0f0;
+  /* Texto claro en inputs */
+  padding: 10px 12px;
+  /* Más padding */
+  border-radius: 6px;
+  /* Más redondeado */
+  font-size: 15px;
+  /* Más grande */
+}
+
+.login-container .form-control:focus {
+  border-color: #ffd700;
+  /* Borde dorado al enfocar */
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+  /* Sombra de enfoque dorada */
+  background-color: #444;
+  /* Ligeramente más claro al enfocar */
+}
+
+.login-container .btn {
+  width: 100%;
+  padding: 12px;
+  /* Más padding */
+  font-size: 16px;
+  /* Más grande */
+  margin-top: 20px;
+  /* Más espacio */
+  background-color: var(--color-primary-base);
+  /* Cambiado a dorado */
+  color: var(--color-header-bg-end);
+  /* Texto oscuro para el botón dorado */
+  border-radius: 8px;
+  /* Más redondeado */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.login-container .btn:hover {
+  background-color: var(--color-primary-hover);
+  /* Cambiado a dorado más oscuro en hover */
+  transform: translateY(-3px);
+  /* Efecto de elevación */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  /* Sombra más oscura en hover */
+}
+
+/* Estilos para alertas en la página de login */
+.login-container .alert {
+  margin-bottom: 18px;
+  /* Reducido de 20px */
+  font-size: 14px;
+  /* Reducido de 15px */
+  padding: 8px 12px;
+  /* Reducido de 10px 15px */
+  border-radius: 6px;
+  border-left: 6px solid;
+}
+
+.login-container .alert-error {
+  background-color: rgba(220, 53, 69, 0.2);
+  /* Fondo rojo semi-transparente */
+  color: #ff6b6b;
+  /* Texto rojo más claro */
+  border-color: #dc3545;
+}
+
+/* Animación de entrada para el contenedor de login */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsive para la página de login */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+    /* Reducido de 25px */
+    border-radius: 8px;
+  }
+
+  .login-logo img {
+    max-width: 120px;
+    /* Reducido de 150px */
+  }
+
+  .login-container h2 {
+    font-size: 1.6rem;
+    /* Reducido de 1.8rem */
+  }
+
+  .login-container .btn {
+    font-size: 15px;
+    /* Reducido de 16px */
+    padding: 10px;
+    /* Reducido de 12px */
+  }
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px; /* Aumentado padding lateral */
+  padding: 0 15px;
+  /* Aumentado padding lateral */
 }
 
 /* Header */
 .header {
   background: linear-gradient(135deg, var(--color-header-bg-start), var(--color-header-bg-end));
   color: white;
-  padding: 1rem 0; /* Aumentado padding */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+  padding: 1rem 0;
+  /* Aumentado padding */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* Sombra más pronunciada */
   position: relative;
   overflow: hidden;
 }
 
 .header h1 {
   text-align: center;
-  font-size: 2rem; /* Aumentado */
+  font-size: 2rem;
+  /* Aumentado */
   margin-bottom: 5px;
   line-height: 1.2;
 }
 
 .header p {
   text-align: center;
-  font-size: 0.9rem; /* Aumentado */
+  font-size: 0.9rem;
+  /* Aumentado */
   opacity: 0.9;
   margin-top: 0;
   margin-bottom: 0;
@@ -129,6 +371,7 @@ body {
   padding: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+  /* Asegura que los elementos posicionados absolutamente se basen en este contenedor */
   margin-bottom: 0;
 }
 
@@ -136,9 +379,12 @@ body {
   list-style: none;
   display: flex;
   justify-content: center;
+  /* Centra los elementos restantes */
   flex-wrap: wrap;
-  padding: 0; /* Asegurar que no haya padding por defecto */
-  margin: 0; /* Asegurar que no haya margen por defecto */
+  padding: 0;
+  /* Asegurar que no haya padding por defecto */
+  margin: 0;
+  /* Asegurar que no haya margen por defecto */
 }
 
 .nav li {
@@ -149,55 +395,82 @@ body {
   display: block;
   color: white;
   text-decoration: none;
-  padding: 12px 18px; /* Aumentado padding */
+  padding: 12px 18px;
+  /* Aumentado padding */
   transition: background-color 0.3s ease, color 0.3s ease;
   font-weight: 500;
   position: relative;
-  font-size: 14px; /* Aumentado */
+  font-size: 14px;
+  /* Aumentado */
 }
 
 .nav a:hover,
 .nav a.active {
   background-color: var(--color-nav-hover);
-  color: #ffffff; /* Asegurar color blanco en hover/active */
+  color: #ffffff;
+  /* Asegurar color blanco en hover/active */
+}
+
+/* Nuevo estilo para el botón de cerrar sesión */
+.nav-logout-item {
+  position: absolute;
+  right: 15px;
+  /* Alinea con el padding del .container */
+  top: 50%;
+  transform: translateY(-50%);
+  /* Centrado vertical */
 }
 
 /* Contenido principal */
 .main-wrapper-container {
-  flex-grow: 1; /* Permite que el contenido principal ocupe el espacio restante */
-  padding-top: 15px; /* Espacio entre nav y contenido */
-  padding-bottom: 15px; /* Espacio antes del footer */
+  flex-grow: 1;
+  /* Permite que el contenido principal ocupe el espacio restante */
+  padding-top: 15px;
+  /* Espacio entre nav y contenido */
+  padding-bottom: 15px;
+  /* Espacio antes del footer */
 }
 
 .main-content {
   background: var(--color-bg-card);
-  padding: 20px; /* Aumentado padding */
+  padding: 20px;
+  /* Aumentado padding */
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra más suave y pronunciada */
-  transition: all 0.3s ease; /* Transición para cambios de estado */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  /* Sombra más suave y pronunciada */
+  transition: all 0.3s ease;
+  /* Transición para cambios de estado */
 }
 
 .main-content h2 {
-  font-size: 1.5rem; /* Aumentado */
+  font-size: 1.5rem;
+  /* Aumentado */
   margin-bottom: 15px;
-  color: var(--color-primary-base); /* Color primario para títulos de sección */
+  color: var(--color-primary-base);
+  /* Color primario para títulos de sección */
   border-bottom: 1px solid var(--color-border-light);
   padding-bottom: 10px;
 }
 
 /* Botones */
 .btn {
-  display: inline-flex; /* Usar flex para centrar contenido */
+  display: inline-flex;
+  /* Usar flex para centrar contenido */
   align-items: center;
   justify-content: center;
-  padding: 8px 16px; /* Aumentado padding */
+  padding: 8px 16px;
+  /* Aumentado padding */
   background-color: var(--color-primary-base);
-  color: white;
+  /* Ahora usará el dorado */
+  color: var(--color-header-bg-end);
+  /* Texto oscuro para el botón dorado */
   text-decoration: none;
-  border-radius: 5px; /* Ligeramente más redondeado */
+  border-radius: 5px;
+  /* Ligeramente más redondeado */
   border: none;
   cursor: pointer;
-  font-size: 14px; /* Aumentado */
+  font-size: 14px;
+  /* Aumentado */
   transition: all 0.3s ease;
   margin: 2px;
   position: relative;
@@ -209,8 +482,10 @@ body {
 
 .btn:hover {
   background-color: var(--color-primary-hover);
-  transform: translateY(-2px); /* Efecto 3D sutil */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra más grande en hover */
+  transform: translateY(-2px);
+  /* Efecto 3D sutil */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* Sombra más grande en hover */
 }
 
 .btn:active {
@@ -253,7 +528,8 @@ body {
 /* Contenedor de botones para mejor alineación */
 .btn-group {
   display: flex;
-  gap: 8px; /* Aumentado */
+  gap: 8px;
+  /* Aumentado */
   align-items: center;
   flex-wrap: wrap;
 }
@@ -264,37 +540,53 @@ body {
 
 /* Formularios */
 .form-group {
-  margin-bottom: 15px; /* Aumentado */
+  margin-bottom: 15px;
+  /* Aumentado */
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 5px; /* Aumentado */
+  margin-bottom: 5px;
+  /* Aumentado */
   font-weight: 600;
   color: var(--color-text-dark);
-  font-size: 14px; /* Aumentado */
+  /* Ahora será claro */
+  font-size: 14px;
+  /* Aumentado */
 }
 
 .form-control {
   width: 100%;
-  padding: 8px 12px; /* Aumentado */
-  border: 1px solid var(--color-border-medium); /* Borde más fino */
+  padding: 8px 12px;
+  /* Aumentado */
+  border: 1px solid var(--color-border-medium);
+  /* Borde más fino */
   border-radius: 5px;
-  font-size: 14px; /* Aumentado */
+  font-size: 14px;
+  /* Aumentado */
   transition: all 0.3s ease;
-  background-color: #fdfdfd; /* Fondo ligeramente diferente */
+  background-color: #333;
+  /* Fondo oscuro para inputs */
+  color: #f0f0f0;
+  /* Texto claro en inputs */
 }
 
 .form-control:focus {
   outline: none;
   border-color: var(--color-primary-base);
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Sombra de enfoque más moderna */
+  /* Borde dorado al enfocar */
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+  /* Sombra de enfoque dorada */
+  background-color: #444;
+  /* Ligeramente más claro al enfocar */
 }
 
 .form-row {
   display: flex;
-  gap: 15px; /* Aumentado */
-  align-items: flex-start; /* Alineación al inicio para labels */
+  gap: 15px;
+  /* Aumentado */
+  align-items: flex-start;
+  /* Alineación al inicio para labels */
 }
 
 .form-row .form-group {
@@ -303,7 +595,8 @@ body {
 
 /* Alineación especial para botones en filtros */
 .filters .form-row {
-  align-items: flex-end; /* Mantener botones alineados abajo */
+  align-items: flex-end;
+  /* Mantener botones alineados abajo */
 }
 
 .filters .form-group:last-child {
@@ -319,33 +612,46 @@ body {
 .table-container {
   overflow-x: auto;
   overflow-y: auto;
-  margin: 20px 0; /* Aumentado */
+  /* Asegura el scroll vertical */
+  max-height: 400px;
+  /* Altura máxima para forzar el scroll vertical */
+  margin: 20px 0;
+  /* Aumentado */
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra más suave */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  /* Sombra más suave */
   background: var(--color-bg-card);
-  border: 1px solid var(--color-border-light); /* Borde sutil */
+  border: 1px solid var(--color-border-light);
+  /* Borde sutil */
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   background: var(--color-bg-card);
-  font-size: 14px; /* Aumentado */
+  font-size: 14px;
+  /* Aumentado */
 }
 
 th,
 td {
-  padding: 12px 15px; /* Aumentado */
+  padding: 12px 15px;
+  /* Aumentado */
   text-align: left;
-  border-bottom: 1px solid var(--color-border-light); /* Borde más claro */
+  border-bottom: 1px solid var(--color-border-light);
+  /* Borde más claro */
+  color: var(--color-text-dark);
+  /* Asegurar texto claro en celdas */
 }
 
 th {
-  background-color: var(--color-nav-bg); /* Usar color de nav para encabezados */
+  background-color: var(--color-nav-bg);
+  /* Usar color de nav para encabezados */
   color: white;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 12px; /* Aumentado */
+  font-size: 12px;
+  /* Aumentado */
   letter-spacing: 0.5px;
   position: sticky;
   top: 0;
@@ -357,26 +663,33 @@ table tr {
 }
 
 table tbody tr:nth-child(even) {
-  background-color: #f8f9fa; /* Rayas de cebra sutiles */
+  background-color: #2f2f2f;
+  /* Rayas de cebra sutiles en oscuro */
 }
 
 table tr:hover {
-  background-color: #e9ecef; /* Hover más pronunciado */
-  transform: translateX(5px); /* Efecto de deslizamiento */
+  background-color: #3a3a3a;
+  /* Hover más pronunciado en oscuro */
+  transform: translateX(5px);
+  /* Efecto de deslizamiento */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Estados */
 .estado {
-  padding: 4px 10px; /* Aumentado */
-  border-radius: 15px; /* Más redondeado */
-  font-size: 11px; /* Aumentado */
+  padding: 4px 10px;
+  /* Aumentado */
+  border-radius: 15px;
+  /* Más redondeado */
+  font-size: 11px;
+  /* Aumentado */
   font-weight: 600;
   text-transform: uppercase;
   transition: all 0.3s ease;
   cursor: default;
   display: inline-block;
-  min-width: 80px; /* Ancho mínimo para consistencia */
+  min-width: 80px;
+  /* Ancho mínimo para consistencia */
   text-align: center;
 }
 
@@ -423,30 +736,39 @@ table tr:hover {
 /* Filtros y búsqueda */
 .filters {
   background-color: var(--color-bg-medium);
-  padding: 15px; /* Aumentado */
+  padding: 15px;
+  /* Aumentado */
   border-radius: 8px;
-  margin-bottom: 20px; /* Aumentado */
+  margin-bottom: 20px;
+  /* Aumentado */
   position: relative;
   border: 1px solid var(--color-border-light);
 }
 
 .filters h3 {
-  margin-bottom: 10px; /* Aumentado */
+  margin-bottom: 10px;
+  /* Aumentado */
   color: var(--color-text-dark);
-  font-size: 1rem; /* Aumentado */
+  /* Ahora será claro */
+  font-size: 1rem;
+  /* Aumentado */
   border-bottom: 1px solid var(--color-border-light);
   padding-bottom: 8px;
 }
 
 /* Alertas */
 .alert {
-  padding: 12px 15px; /* Aumentado */
-  margin-bottom: 15px; /* Aumentado */
+  padding: 12px 15px;
+  /* Aumentado */
+  margin-bottom: 15px;
+  /* Aumentado */
   border-radius: 5px;
   font-weight: 500;
-  border-left: 5px solid; /* Borde más grueso */
+  border-left: 5px solid;
+  /* Borde más grueso */
   animation: slideInLeft 0.5s ease-out;
-  font-size: 14px; /* Aumentado */
+  font-size: 14px;
+  /* Aumentado */
 }
 
 .alert-success {
@@ -473,8 +795,10 @@ table tr:hover {
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-30px); /* Más pronunciado */
+    transform: translateX(-30px);
+    /* Más pronunciado */
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -485,9 +809,12 @@ table tr:hover {
 .card {
   background: var(--color-bg-card);
   border-radius: 8px;
-  padding: 20px; /* Aumentado */
-  margin-bottom: 15px; /* Aumentado */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
+  padding: 20px;
+  /* Aumentado */
+  margin-bottom: 15px;
+  /* Aumentado */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  /* Sombra más pronunciada */
   transition: all 0.3s ease;
   border: 1px solid var(--color-border-light);
   overflow: hidden;
@@ -495,7 +822,9 @@ table tr:hover {
 
 .card h3 {
   color: var(--color-text-dark);
-  font-size: 1.2rem; /* Aumentado */
+  /* Ahora será claro */
+  font-size: 1.2rem;
+  /* Aumentado */
   margin-top: 0;
   margin-bottom: 10px;
   border-bottom: 1px solid var(--color-border-light);
@@ -503,26 +832,38 @@ table tr:hover {
 }
 
 .card:hover {
-  transform: translateY(-3px); /* Efecto 3D más pronunciado */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra de hover más grande */
+  transform: translateY(-3px);
+  /* Efecto 3D más pronunciado */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  /* Sombra de hover más grande */
 }
 
 /* Dashboard stats */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajustado min-width */
-  gap: 15px; /* Aumentado */
-  margin-bottom: 20px; /* Aumentado */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  /* Ajustado min-width */
+  gap: 10px;
+  /* Reducido */
+  margin-bottom: 20px;
+  /* Aumentado */
 }
 
 .stat-card {
-  background: linear-gradient(135deg, var(--color-primary-base), var(--color-primary-hover));
+  background-color: var(--color-bg-card);
+  /* Fondo de la tarjeta ahora es el color de la tarjeta general */
   color: white;
-  padding: 25px; /* Aumentado */
+  /* Texto blanco como solicitado */
+  padding: 15px;
+  /* Reducido */
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  /* Sombra más pronunciada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  /* Añadido border-color a la transición */
+  border: 2px solid var(--color-primary-base);
+  /* Borde dorado por defecto */
 }
 
 .stat-card:hover {
@@ -530,43 +871,60 @@ table tr:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* Colores específicos para stat-cards */
+/* Colores específicos para stat-cards (solo el borde) */
+.stat-card:nth-child(1) {
+  /* Primer stat-card, que era primary-base */
+  border-color: var(--color-primary-base);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.534);
+  /* Sombra con color primario */
+}
+
 .stat-card:nth-child(2) {
   /* Instrumentos */
-  background: linear-gradient(135deg, #28a745, #218838);
-  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.15);
+  border-color: var(--color-success-base);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.534);
 }
+
 .stat-card:nth-child(3) {
   /* Uniformes */
-  background: linear-gradient(135deg, #ffc107, #e0a800);
-  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.15);
+  border-color: var(--color-warning-base);
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.534);
 }
+
 .stat-card:nth-child(4) {
   /* Accesorios */
-  background: linear-gradient(135deg, #6f42c1, #563d7c); /* Púrpura más oscuro */
-  box-shadow: 0 6px 20px rgba(111, 66, 193, 0.15);
+  border-color: #6f42c1;
+  /* Púrpura más oscuro */
+  box-shadow: 0 6px 20px rgba(111, 66, 193, 0.534);
 }
+
 .stat-card:nth-child(5) {
   /* Repuestos */
-  background: linear-gradient(135deg, #17a2b8, #138496); /* Cian */
-  box-shadow: 0 6px 20px rgba(23, 162, 184, 0.15);
+  border-color: #17a2b8;
+  /* Cian */
+  box-shadow: 0 6px 20px rgba(23, 162, 184, 0.534);
 }
+
 .stat-card:nth-child(6) {
   /* Préstamos Activos */
-  background: linear-gradient(135deg, var(--color-primary-base), var(--color-primary-hover));
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.15);
+  border-color: var(#d32828ff);
+  box-shadow: 0 6px 20px rgba(235, 0, 0, 0.534);
 }
 
 .stat-card h3 {
-  font-size: 2rem; /* Aumentado */
+  font-size: 1.5rem;
+  /* Reducido */
   margin-bottom: 8px;
-  color: white; /* Asegurar que el texto sea blanco */
+  color: white;
+  /* Asegurar que el texto sea blanco */
 }
 
 .stat-card p {
-  font-size: 0.9rem; /* Aumentado */
+  font-size: 0.8rem;
+  /* Reducido */
   opacity: 0.9;
-  color: white; /* Asegurar que el texto sea blanco */
+  color: white;
+  /* Asegurar que el texto sea blanco */
 }
 
 /* Mejoras para alineación de elementos */
@@ -574,15 +932,20 @@ table tr:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0; /* Aumentado */
-  margin-bottom: 15px; /* Aumentado */
+  padding: 10px 0;
+  /* Aumentado */
+  margin-bottom: 15px;
+  /* Aumentado */
   flex-wrap: wrap;
-  gap: 10px; /* Aumentado */
+  gap: 10px;
+  /* Aumentado */
 }
 
 .header-actions h2 {
   margin: 0;
   flex: 1;
+  color: var(--color-text-dark);
+  /* Asegurar texto claro */
 }
 
 .header-actions .btn-group {
@@ -592,13 +955,16 @@ table tr:hover {
 /* Acciones de tabla */
 .table-actions {
   display: flex;
-  gap: 6px; /* Aumentado */
+  gap: 6px;
+  /* Aumentado */
   flex-wrap: wrap;
 }
 
 .table-actions .btn {
-  padding: 6px 12px; /* Aumentado */
-  font-size: 12px; /* Aumentado */
+  padding: 6px 12px;
+  /* Aumentado */
+  font-size: 12px;
+  /* Aumentado */
 }
 
 /* Responsive */
@@ -609,6 +975,34 @@ table tr:hover {
 
   .nav ul {
     flex-direction: column;
+    align-items: center;
+    /* Centra los elementos en columna */
+  }
+
+  /* Ajuste para el botón de cerrar sesión en móvil */
+  .nav-logout-item {
+    position: static;
+    /* Vuelve a posicionamiento normal */
+    transform: none;
+    margin-top: 10px;
+    /* Espacio entre el último elemento y el botón de cerrar sesión */
+    width: 100%;
+    /* Ocupa todo el ancho */
+    text-align: center;
+  }
+
+  .nav-logout-item a {
+    display: inline-flex;
+    /* Para centrar el contenido del enlace */
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    /* Permite que el contenido defina el ancho */
+    padding: 8px 16px;
+    /* Ajusta el padding para que parezca un botón */
+    background-color: var(--color-nav-hover);
+    /* Fondo similar al hover de nav */
+    border-radius: 5px;
   }
 
   .form-row {
@@ -672,9 +1066,11 @@ table tr:hover {
   background-color: var(--color-nav-hover);
   color: white;
   text-align: center;
-  padding: 10px 0; /* Aumentado */
+  padding: 10px 0;
+  /* Aumentado */
   margin-top: auto;
-  font-size: 13px; /* Aumentado */
+  font-size: 13px;
+  /* Aumentado */
 }
 
 .footer p {
@@ -689,7 +1085,8 @@ table tr:hover {
   bottom: 0;
   left: 50%;
   width: 0;
-  height: 3px; /* Más grueso */
+  height: 3px;
+  /* Más grueso */
   background-color: var(--color-nav-active-line);
   transition: all 0.3s ease;
   transform: translateX(-50%);
@@ -697,7 +1094,8 @@ table tr:hover {
 
 .nav a:hover::after,
 .nav a.active::after {
-  width: 90%; /* Más ancho */
+  width: 90%;
+  /* Más ancho */
 }
 
 /* Scroll suave */
@@ -712,19 +1110,23 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.07) 25%, transparent 25%), /* Opacidad ligeramente aumentada */
-    linear-gradient(-45deg, rgba(255, 255, 255, 0.07) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.07) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.07) 75%);
-  background-size: 20px 20px; /* Tamaño de patrón más grande */
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
+    /* Opacidad reducida */
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.03) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.03) 75%);
+  background-size: 20px 20px;
+  /* Tamaño de patrón más grande */
   background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-  opacity: 0.15; /* Opacidad ligeramente aumentada */
+  opacity: 0.15;
+  /* Opacidad ligeramente aumentada */
 }
 
 /* Estilos para formularios mejorados */
 .form-control.error {
   border-color: var(--color-danger-base) !important;
-  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25); /* Sombra de error más moderna */
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+  /* Sombra de error más moderna */
 }
 
 .loading {
@@ -743,6 +1145,7 @@ html {
     transform: translateX(100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -754,6 +1157,7 @@ html {
     transform: translateX(0);
     opacity: 1;
   }
+
   to {
     transform: translateX(100%);
     opacity: 0;
@@ -763,8 +1167,10 @@ html {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-15px); /* Más pronunciado */
+    transform: translateY(-15px);
+    /* Más pronunciado */
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -775,6 +1181,7 @@ html {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -782,9 +1189,11 @@ html {
 
 /* Mejoras específicas para botones en diferentes contextos */
 .form-actions {
-  margin-top: 20px; /* Aumentado */
+  margin-top: 20px;
+  /* Aumentado */
   display: flex;
-  gap: 10px; /* Aumentado */
+  gap: 10px;
+  /* Aumentado */
   flex-wrap: wrap;
 }
 
@@ -796,12 +1205,15 @@ html {
 .mb-1 {
   margin-bottom: 5px;
 }
+
 .mb-2 {
   margin-bottom: 10px;
 }
+
 .mb-3 {
   margin-bottom: 15px;
 }
+
 .mb-4 {
   margin-bottom: 20px;
 }
@@ -809,19 +1221,23 @@ html {
 .mt-1 {
   margin-top: 5px;
 }
+
 .mt-2 {
   margin-top: 10px;
 }
+
 .mt-3 {
   margin-top: 15px;
 }
+
 .mt-4 {
   margin-top: 20px;
 }
 
 /* Texto más pequeño para información adicional */
 .text-small {
-  font-size: 12px; /* Aumentado */
+  font-size: 12px;
+  /* Aumentado */
   color: var(--color-text-medium);
 }
 
@@ -832,9 +1248,12 @@ html {
 /* Dashboard Sections Grid */
 .dashboard-sections-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajustado min-width */
-  gap: 20px; /* Aumentado */
-  margin-top: 25px; /* Aumentado */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Ajustado min-width */
+  gap: 20px;
+  /* Aumentado */
+  margin-top: 25px;
+  /* Aumentado */
 }
 
 @media (min-width: 768px) {
@@ -848,8 +1267,10 @@ html {
 .uniform-section .card,
 .accesorio-section .card,
 .repuesto-section .card {
-  margin-bottom: 15px; /* Aumentado */
+  margin-bottom: 15px;
+  /* Aumentado */
 }
+
 .instrument-section .card:last-child,
 .uniform-section .card:last-child,
 .accesorio-section .card:last-child,
@@ -864,9 +1285,11 @@ html {
   width: 100%;
   text-align: left;
   padding: 0;
-  font-size: 1.1rem; /* Aumentado */
+  font-size: 1.1rem;
+  /* Aumentado */
   font-weight: bold;
   color: var(--color-text-dark);
+  /* Asegurar texto claro */
   cursor: pointer;
   transition: background-color 0.2s ease;
   display: flex;
@@ -878,39 +1301,38 @@ html {
   background-color: var(--color-bg-medium);
 }
 
-.collapsible-toggle h3 {
-  margin: 0;
-  padding: 12px 0; /* Aumentado */
-  font-size: 1.1rem; /* Aumentado */
-  color: inherit;
-}
-
 .toggle-icon {
   transition: transform 0.3s ease;
-  font-size: 1em; /* Aumentado */
+  font-size: 1em;
+  /* Aumentado */
 }
 
 .collapsible-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Transición más suave */
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  /* Transición más suave */
   padding: 0;
 }
 
 .collapsible-content.expanded {
-  max-height: 600px; /* Suficientemente grande para contener la tabla */
-  padding-bottom: 20px; /* Aumentado */
+  max-height: 600px;
+  /* Suficientemente grande para contener la tabla */
+  padding-bottom: 20px;
+  /* Aumentado */
 }
 
 /* Ajustes para el table-container dentro del collapsible */
 .collapsible-content .table-container {
-  margin-top: 10px; /* Aumentado */
+  margin-top: 10px;
+  /* Aumentado */
 }
 
 /* Estilo para celdas de tabla cuando no hay resultados */
 .no-results-cell {
   text-align: center;
-  padding: 20px !important; /* Aumentado */
+  padding: 20px !important;
+  /* Aumentado */
   color: var(--color-text-medium);
   font-style: italic;
 }
@@ -924,12 +1346,15 @@ html {
 
 /* Estilos específicos para la sección de reportes */
 .report-content {
-  margin-top: 25px; /* Aumentado */
-  padding: 20px; /* Aumentado */
+  margin-top: 25px;
+  /* Aumentado */
+  padding: 20px;
+  /* Aumentado */
 }
 
 .report-content h3 {
-  font-size: 1.3rem; /* Aumentado */
+  font-size: 1.3rem;
+  /* Aumentado */
   margin-bottom: 15px;
   border-bottom: 1px solid var(--color-border-light);
   padding-bottom: 10px;
@@ -939,8 +1364,10 @@ html {
 @media print {
   body {
     background-color: #fff;
-    font-size: 11pt; /* Aumentado */
+    font-size: 11pt;
+    /* Aumentado */
   }
+
   .header,
   .nav,
   .footer,
@@ -949,37 +1376,49 @@ html {
   .alert {
     display: none;
   }
+
   .main-content {
     margin: 0;
     padding: 0;
     box-shadow: none;
     border-radius: 0;
   }
+
   .report-content {
     margin-top: 0;
     padding: 0;
     box-shadow: none;
     border: none;
   }
+
   table {
     width: 100%;
     border-collapse: collapse;
   }
+
   th,
   td {
     border: 1px solid #ccc;
-    padding: 8px; /* Aumentado */
-    font-size: 10pt; /* Aumentado */
+    padding: 8px;
+    /* Aumentado */
+    font-size: 10pt;
+    /* Aumentado */
   }
+
   th {
-    background-color: #f8f8f8; /* Fondo más claro para impresión */
+    background-color: #f8f8f8;
+    /* Fondo más claro para impresión */
     color: #333;
   }
+
   .estado {
     border: 1px solid #ccc;
-    padding: 2px 6px; /* Aumentado */
-    font-size: 9pt; /* Aumentado */
+    padding: 2px 6px;
+    /* Aumentado */
+    font-size: 9pt;
+    /* Aumentado */
   }
+
   .no-results-cell {
     padding: 10px !important;
   }

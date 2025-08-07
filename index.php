@@ -116,23 +116,23 @@ try {
             <h3><?php echo $total_estudiantes; ?></h3>
             <p>Estudiantes Registrados</p>
         </div>
-        <div class="stat-card" style="background: linear-gradient(135deg, #27ae60, #229954);">
+        <div class="stat-card" style="border-color: #28a745;">
             <h3><?php echo $total_instrumentos; ?></h3>
             <p>Total Instrumentos</p>
         </div>
-        <div class="stat-card" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+        <div class="stat-card" style="border-color: #ff6a07ff;">
             <h3><?php echo $total_uniformes; ?></h3>
             <p>Total Uniformes</p>
         </div>
-        <div class="stat-card" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+        <div class="stat-card" style="border-color: #9b59b6;">
             <h3><?php echo $total_accesorios; ?></h3>
             <p>Total Accesorios</p>
         </div>
-        <div class="stat-card" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+        <div class="stat-card" style="border-color: #3498db;">
             <h3><?php echo $total_repuestos_disponibles; ?></h3>
             <p>Repuestos Disponibles</p>
         </div>
-        <div class="stat-card" style="background: linear-gradient(135deg, var(--color-primary-base), var(--color-primary-hover));">
+        <div class="stat-card" style="border-color: #d32828ff;">
             <h3><?php echo $prestamos_activos; ?></h3>
             <p>Préstamos Activos</p>
         </div>
@@ -360,18 +360,6 @@ try {
                                 <?php endif; ?>
                             </tbody>
                         </table>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <button class="collapsible-toggle" data-target="repuesto-actions-content">
-                    <h3>Acciones de Repuestos <span class="toggle-icon">▼</span></h3>
-                </button>
-                <div id="repuesto-actions-content" class="collapsible-content">
-                    <div class="btn-group" style="flex-direction: column; align-items: flex-start;">
-                        <a href="modules/repuestos/crear.php" class="btn btn-success">Agregar Nuevo Repuesto</a>
-                        <a href="modules/repuestos/index.php" class="btn btn-secondary">Ver Todos los Repuestos</a>
-                        <a href="modules/repuestos/movimientos.php" class="btn btn-secondary">Ver Movimientos de Repuestos</a>
                     </div>
                 </div>
             </div>
