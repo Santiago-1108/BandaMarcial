@@ -4,7 +4,7 @@ class Database {
     private $host = 'localhost';
     private $db_name = 'banda_marcial';
     private $username = 'root';
-    private $password = '1108';
+    private $password = '';
     private $conn;
 
     public function getConnection() {
