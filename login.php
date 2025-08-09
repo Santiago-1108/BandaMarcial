@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body class="login-page-body">
     <div class="login-container">
         <div class="login-logo">
-            <img src="<?php echo $base_url; ?>public/images/badaton-logo.jpeg" alt="Logo Badaton - Instrumentos que Inspiran">
+            <img src="<?php echo $base_url; ?>public/images/badaton-logo.png" alt="Logo Badaton - Instrumentos que Inspiran">
         </div>
         <h2>Iniciar Sesión</h2>
         
