@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombre_completo = trim($_POST['nombre_completo']);
     $grado = trim($_POST['grado']);
     $documento_identidad = trim($_POST['documento_identidad']);
-    $direccion = trim($_POST['direccion'] ?? ''); // Nuevo campo
-    $telefono = trim($_POST['telefono'] ?? '');   // Nuevo campo
+    $direccion = trim($_POST['direccion'] ?? ''); 
+    $telefono = trim($_POST['telefono'] ?? '');  
     
     // Validaciones
     if (empty($nombre_completo) || empty($grado) || empty($documento_identidad)) {
