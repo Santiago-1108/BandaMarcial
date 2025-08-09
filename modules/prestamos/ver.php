@@ -16,9 +16,9 @@ if (!$id) {
 }
 
 try {
-    // Obtener datos del préstamo
+    // Obtener datos del préstamo, incluyendo dirección y teléfono del estudiante
     $stmt = $conn->prepare("
-        SELECT p.*, e.nombre_completo, e.grado, e.documento_identidad
+        SELECT p.*, e.nombre_completo, e.grado, e.documento_identidad, e.direccion, e.telefono
         FROM prestamos p
         JOIN estudiantes e ON p.estudiante_id = e.id
         WHERE p.id = ?
@@ -37,22 +37,22 @@ try {
                CASE 
                    WHEN pi.tipo_item = 'instrumento' THEN i.nombre
                    WHEN pi.tipo_item = 'uniforme' THEN CONCAT(u.tipo, ' Talla ', u.talla)
-                   WHEN pi.tipo_item = 'accesorio' THEN a.nombre -- Nuevo: para accesorios
+                   WHEN pi.tipo_item = 'accesorio' THEN a.nombre
                END as nombre_item,
                CASE 
                    WHEN pi.tipo_item = 'instrumento' THEN i.codigo_serie
                    WHEN pi.tipo_item = 'uniforme' THEN u.codigo_serie
-                   WHEN pi.tipo_item = 'accesorio' THEN a.codigo_serie -- Nuevo: para accesorios
+                   WHEN pi.tipo_item = 'accesorio' THEN a.codigo_serie
                END as detalle_item,
                CASE
                    WHEN pi.tipo_item = 'instrumento' THEN i.estado
                    WHEN pi.tipo_item = 'uniforme' THEN u.estado
-                   WHEN pi.tipo_item = 'accesorio' THEN a.estado -- Nuevo: para accesorios
+                   WHEN pi.tipo_item = 'accesorio' THEN a.estado
                END as estado_item_actual
         FROM prestamo_items pi
         LEFT JOIN instrumentos i ON pi.tipo_item = 'instrumento' AND pi.item_id = i.id
         LEFT JOIN uniformes u ON pi.tipo_item = 'uniforme' AND pi.item_id = u.id
-        LEFT JOIN accesorios a ON pi.tipo_item = 'accesorio' AND pi.item_id = a.id -- Nuevo: para accesorios
+        LEFT JOIN accesorios a ON pi.tipo_item = 'accesorio' AND pi.item_id = a.id
         WHERE pi.prestamo_id = ?
         ORDER BY pi.tipo_item, pi.id
     ");
@@ -98,6 +98,14 @@ $vencido = $hoy > $fecha_devolucion;
             <div>
                 <strong>Documento:</strong><br>
                 <?php echo htmlspecialchars($prestamo['documento_identidad']); ?>
+            </div>
+            <div>
+                <strong>Dirección:</strong><br>
+                <?php echo htmlspecialchars($prestamo['direccion'] ?? 'N/A'); ?>
+            </div>
+            <div>
+                <strong>Teléfono:</strong><br>
+                <?php echo htmlspecialchars($prestamo['telefono'] ?? 'N/A'); ?>
             </div>
             <div>
                 <strong>Estado:</strong><br>

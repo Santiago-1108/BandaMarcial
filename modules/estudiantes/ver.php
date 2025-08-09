@@ -16,8 +16,8 @@ if (!$id) {
 }
 
 try {
-    // Obtener datos del estudiante
-    $stmt = $conn->prepare("SELECT * FROM estudiantes WHERE id = ?");
+    // Obtener datos del estudiante, incluyendo dirección y teléfono
+    $stmt = $conn->prepare("SELECT *, direccion, telefono FROM estudiantes WHERE id = ?");
     $stmt->execute([$id]);
     $estudiante = $stmt->fetch(PDO::FETCH_ASSOC);
     
@@ -70,6 +70,14 @@ try {
             <div>
                 <strong>Documento:</strong><br>
                 <?php echo htmlspecialchars($estudiante['documento_identidad']); ?>
+            </div>
+            <div>
+                <strong>Dirección:</strong><br>
+                <?php echo htmlspecialchars($estudiante['direccion'] ?? 'N/A'); ?>
+            </div>
+            <div>
+                <strong>Teléfono:</strong><br>
+                <?php echo htmlspecialchars($estudiante['telefono'] ?? 'N/A'); ?>
             </div>
             <div>
                 <strong>Fecha de Registro:</strong><br>

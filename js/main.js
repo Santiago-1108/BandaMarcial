@@ -395,7 +395,7 @@ function actualizarEstadoPrestamos() {
       }
     })
     .catch((error) => {
-      console.error("Error al actualizar estados:", error)
+      console.error("Error al actualizar estados:", error);
     })
 }
 

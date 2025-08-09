@@ -1,7 +1,7 @@
 <?php
-$base_url = '../../';
+$base_url = '../../'; // Ajusta la ruta base según sea necesario
 $page_title = 'Registrar Estudiante';
-$current_module = 'estudiantes';
+$current_module = 'estudiantes'; // Definir el módulo actual
 require_once '../../config/database.php';
 require_once '../../includes/header.php';
 
@@ -11,6 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombre_completo = trim($_POST['nombre_completo']);
     $grado = trim($_POST['grado']);
     $documento_identidad = trim($_POST['documento_identidad']);
+    $direccion = trim($_POST['direccion'] ?? ''); // Nuevo campo
+    $telefono = trim($_POST['telefono'] ?? '');   // Nuevo campo
     
     // Validaciones
     if (empty($nombre_completo) || empty($grado) || empty($documento_identidad)) {
@@ -28,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit;
         }
         
-        // Insertar estudiante
-        $stmt = $conn->prepare("INSERT INTO estudiantes (nombre_completo, grado, documento_identidad) VALUES (?, ?, ?)");
-        if ($stmt->execute([$nombre_completo, $grado, $documento_identidad])) {
+        // Insertar estudiante con los nuevos campos
+        $stmt = $conn->prepare("INSERT INTO estudiantes (nombre_completo, grado, documento_identidad, direccion, telefono) VALUES (?, ?, ?, ?, ?)");
+        if ($stmt->execute([$nombre_completo, $grado, $documento_identidad, $direccion, $telefono])) {
             header('Location: index.php?success=' . urlencode('Estudiante registrado exitosamente.'));
             exit;
         }
@@ -93,6 +95,18 @@ if (isset($_GET['error'])) {
             <label for="documento_identidad">Documento de Identidad o Número Escolar *</label>
             <input type="text" id="documento_identidad" name="documento_identidad" class="form-control" 
                    placeholder="Documento de identidad o número escolar" required>
+        </div>
+
+        <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion" class="form-control" 
+                   placeholder="Dirección de residencia del estudiante" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="telefono">Número de Teléfono</label>
+            <input type="text" id="telefono" name="telefono" class="form-control" 
+                   placeholder="Número de teléfono del estudiante" required>
         </div>
         
         <div class="form-actions">

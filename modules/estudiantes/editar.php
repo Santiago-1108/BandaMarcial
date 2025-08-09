@@ -17,7 +17,7 @@ if (!$id) {
 
 // Obtener datos del estudiante
 try {
-    $stmt = $conn->prepare("SELECT * FROM estudiantes WHERE id = ?");
+    $stmt = $conn->prepare("SELECT *, direccion, telefono FROM estudiantes WHERE id = ?"); // Incluir nuevos campos
     $stmt->execute([$id]);
     $estudiante = $stmt->fetch(PDO::FETCH_ASSOC);
     
@@ -34,6 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombre_completo = trim($_POST['nombre_completo']);
     $grado = trim($_POST['grado']);
     $documento_identidad = trim($_POST['documento_identidad']);
+    $direccion = trim($_POST['direccion'] ?? ''); // Nuevo campo
+    $telefono = trim($_POST['telefono'] ?? '');   // Nuevo campo
     
     // Validaciones
     if (empty($nombre_completo) || empty($grado) || empty($documento_identidad)) {
@@ -51,13 +53,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit;
         }
         
-        // Actualizar estudiante (sin campo activo)
-        $stmt = $conn->prepare("UPDATE estudiantes SET nombre_completo = ?, grado = ?, documento_identidad = ? WHERE id = ?");
-        if ($stmt->execute([$nombre_completo, $grado, $documento_identidad, $id])) {
-            // Actualizar datos mostrados
+        // Actualizar estudiante con los nuevos campos
+        $stmt = $conn->prepare("UPDATE estudiantes SET nombre_completo = ?, grado = ?, documento_identidad = ?, direccion = ?, telefono = ? WHERE id = ?");
+        if ($stmt->execute([$nombre_completo, $grado, $documento_identidad, $direccion, $telefono, $id])) {
+            // Actualizar datos mostrados (opcional, pero buena práctica si no se redirige inmediatamente)
             $estudiante['nombre_completo'] = $nombre_completo;
             $estudiante['grado'] = $grado;
             $estudiante['documento_identidad'] = $documento_identidad;
+            $estudiante['direccion'] = $direccion;
+            $estudiante['telefono'] = $telefono;
 
             header('Location: index.php?success=' . urlencode('Estudiante actualizado exitosamente.'));
             exit;
@@ -123,6 +127,20 @@ if (isset($_GET['error'])) {
             <input type="text" id="documento_identidad" name="documento_identidad" class="form-control" 
                    value="<?php echo htmlspecialchars($estudiante['documento_identidad']); ?>"
                    placeholder="Documento de identidad o número escolar" required>
+        </div>
+
+        <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion" class="form-control" 
+                   value="<?php echo htmlspecialchars($estudiante['direccion'] ?? ''); ?>"
+                   placeholder="Dirección de residencia del estudiante" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="telefono">Número de Teléfono</label>
+            <input type="text" id="telefono" name="telefono" class="form-control" 
+                   value="<?php echo htmlspecialchars($estudiante['telefono'] ?? ''); ?>"
+                   placeholder="Número de teléfono del estudiante" required>
         </div>
         
         <div class="form-actions">

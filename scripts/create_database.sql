@@ -90,6 +90,8 @@ CREATE TABLE IF NOT EXISTS estudiantes (
   nombre_completo VARCHAR(150) NOT NULL,
   grado VARCHAR(20) NOT NULL,
   documento_identidad VARCHAR(50) UNIQUE NOT NULL,
+  direccion VARCHAR(255) NULL, -- NUEVO: Campo para la dirección
+  telefono VARCHAR(20) NULL,   -- NUEVO: Campo para el número telefónico
   fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   activo BOOLEAN DEFAULT TRUE
 );

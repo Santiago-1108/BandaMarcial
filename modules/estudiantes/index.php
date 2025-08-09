@@ -23,8 +23,8 @@ if (isset($_GET['error'])) {
 $filtro_grado = isset($_GET['grado']) ? $_GET['grado'] : '';
 $buscar = isset($_GET['buscar']) ? $_GET['buscar'] : '';
 
-// Construir consulta con filtros
-$sql = "SELECT * FROM estudiantes WHERE 1=1";
+// Construir consulta con filtros, incluyendo los nuevos campos
+$sql = "SELECT id, nombre_completo, grado, documento_identidad, direccion, telefono, fecha_registro, activo FROM estudiantes WHERE 1=1";
 $params = [];
 
 if ($filtro_grado) {
@@ -33,10 +33,12 @@ if ($filtro_grado) {
 }
 
 if ($buscar) {
-    $sql .= " AND (nombre_completo LIKE ? OR documento_identidad LIKE ? OR grado LIKE ?)";
+    $sql .= " AND (nombre_completo LIKE ? OR documento_identidad LIKE ? OR grado LIKE ? OR direccion LIKE ? OR telefono LIKE ?)"; // Incluir búsqueda en nuevos campos
     $params[] = "%$buscar%";
     $params[] = "%$buscar%";
     $params[] = "%$buscar%";
+    $params[] = "%$buscar%"; // Para dirección
+    $params[] = "%$buscar%"; // Para teléfono
 }
 
 $sql .= " ORDER BY nombre_completo";
@@ -76,7 +78,7 @@ try {
             <div class="form-row">
                 <div class="form-group">
                     <label>Buscar:</label>
-                    <input type="text" name="buscar" class="form-control" placeholder="Nombre, documento o grado..." value="<?php echo htmlspecialchars($buscar); ?>">
+                    <input type="text" name="buscar" class="form-control" placeholder="Nombre, documento, grado, dirección o teléfono..." value="<?php echo htmlspecialchars($buscar); ?>">
                 </div>
                 <div class="form-group">
                     <label>Grado:</label>
@@ -107,6 +109,8 @@ try {
                     <th>Nombre Completo</th>
                     <th>Grado</th>
                     <th>Documento</th>
+                    <th>Dirección</th>  <!-- Nueva columna -->
+                    <th>Teléfono</th>    <!-- Nueva columna -->
                     <th>Fecha Registro</th>
                     <th>Acciones</th>
                 </tr>
@@ -114,7 +118,7 @@ try {
             <tbody>
                 <?php if (empty($estudiantes)): ?>
                 <tr>
-                    <td colspan="5" style="text-align: center; padding: 30px;">
+                    <td colspan="7" style="text-align: center; padding: 30px;"> <!-- colspan ajustado -->
                         No se encontraron estudiantes con los filtros aplicados.
                     </td>
                 </tr>
@@ -124,6 +128,8 @@ try {
                     <td><?php echo htmlspecialchars($estudiante['nombre_completo']); ?></td>
                     <td><?php echo htmlspecialchars($estudiante['grado']); ?></td>
                     <td><?php echo htmlspecialchars($estudiante['documento_identidad']); ?></td>
+                    <td><?php echo htmlspecialchars($estudiante['direccion'] ?? 'N/A'); ?></td>  <!-- Mostrar dirección -->
+                    <td><?php echo htmlspecialchars($estudiante['telefono'] ?? 'N/A'); ?></td>    <!-- Mostrar teléfono -->
                     <td><?php echo date('d/m/Y', strtotime($estudiante['fecha_registro'])); ?></td>
                     <td>
                         <div class="table-actions">
